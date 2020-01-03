@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
 title: Toybox
 description: The Machine Learning Toybox for testing of Atari Reinforcement Learning Agents.
+logo: toybox-logo.svg
