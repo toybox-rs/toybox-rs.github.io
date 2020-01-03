@@ -12,11 +12,11 @@ A set of games designed for testing deep RL agents.
 
 If you use this code, or otherwise are inspired by our white-box testing approach, please cite our [NeurIPS workshop paper](https://arxiv.org/abs/1812.02850):
 
-```
+```bibtex
 @inproceedings{foley2018toybox,
-  title={{Toybox: Better Atari Environments for Testing Reinforcement Learning Agents}},
+  title={Toybox: Better Atari Environments for Testing Reinforcement Learning Agents},
   author={Foley, John and Tosch, Emma and Clary, Kaleigh and Jensen, David},
-  booktitle={{NeurIPS 2018 Workshop on Systems for ML}},
+  booktitle={NeurIPS 2018 Workshop on Systems for ML},
   year={2018}
 }
 ```
