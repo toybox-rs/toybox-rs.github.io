@@ -1,0 +1,288 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Simulator &mdash; ctoybox 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="State" href="state.html" />
+    <link rel="prev" title="Input" href="input.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ctoybox
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="toybox.html">Toybox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">Input</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="state.html">State</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ctoybox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Simulator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/simulator.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="simulator">
+<h1>Simulator<a class="headerlink" href="#simulator" title="Permalink to this headline">¶</a></h1>
+<p>The Simulator class wraps up the configuration and simulator into a class, hiding the raw FFI calls.</p>
+<p>The code for this class can be found in <code class="code docutils literal notranslate"><span class="pre">/ctoybox/ctoybox/ffi.py</span></code>.</p>
+<dl class="class">
+<dt id="ctoybox.Simulator">
+<em class="property">class </em><code class="sig-prename descclassname">ctoybox.</code><code class="sig-name descname">Simulator</code><span class="sig-paren">(</span><em class="sig-param">game_name</em>, <em class="sig-param">sim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctoybox.Simulator" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Simulator is an instance of a game configuration.
+You can call new_game on it to begin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>game_name</strong> – one of “breakout”, “amidar”, etc.</p></li>
+<li><p><strong>sim</strong> – optionally a Rust pointer to an existing simulator.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="ctoybox.Simulator.from_json">
+<code class="sig-name descname">from_json</code><span class="sig-paren">(</span><em class="sig-param">config_js: Union[Dict[str, Any], str]</em><span class="sig-paren">)</span><a class="headerlink" href="#ctoybox.Simulator.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutably update this simulator/config with the replacement json.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctoybox.Simulator.get_frame_height">
+<code class="sig-name descname">get_frame_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#ctoybox.Simulator.get_frame_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the height in pixels of the frames this game renders.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctoybox.Simulator.get_frame_width">
+<code class="sig-name descname">get_frame_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#ctoybox.Simulator.get_frame_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the width in pixels of the frames this game renders.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctoybox.Simulator.get_simulator">
+<code class="sig-name descname">get_simulator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctoybox.Simulator.get_simulator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get access to the raw simulator pointer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctoybox.Simulator.new_game">
+<code class="sig-name descname">new_game</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; ctoybox.ffi.State<a class="headerlink" href="#ctoybox.Simulator.new_game" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a new game.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctoybox.Simulator.schema_for_config">
+<code class="sig-name descname">schema_for_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctoybox.Simulator.schema_for_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the JSON Schema for any config for this game.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctoybox.Simulator.schema_for_state">
+<code class="sig-name descname">schema_for_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict[str, Any]<a class="headerlink" href="#ctoybox.Simulator.schema_for_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the JSON Schema for any state for this game.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctoybox.Simulator.set_seed">
+<code class="sig-name descname">set_seed</code><span class="sig-paren">(</span><em class="sig-param">value: int</em><span class="sig-paren">)</span><a class="headerlink" href="#ctoybox.Simulator.set_seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the random number generator that spawns new game states.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctoybox.Simulator.state_from_json">
+<code class="sig-name descname">state_from_json</code><span class="sig-paren">(</span><em class="sig-param">js: Union[Dict[str, Any], str]</em><span class="sig-paren">)</span> &#x2192; ctoybox.ffi.State<a class="headerlink" href="#ctoybox.Simulator.state_from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a State from the state json and this configuration.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctoybox.Simulator.to_json">
+<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict[str, Any]<a class="headerlink" href="#ctoybox.Simulator.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the configuration of this simulator/config as JSON</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="state.html" class="btn btn-neutral float-right" title="State" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="input.html" class="btn btn-neutral float-left" title="Input" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Emma Tosch, John Foley, Kaleigh Clary
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+<ul>
+  <li> Consider filing an <a href="https://github.com/toybox-rs/toybox-rs/issues">issue</a> if you have questions not addressed yet in this documentation.</li>
+  <li>Browse the code on Github: <a href="https://github.com/toybox-rs/toybox-rs">toybox-rs/toybox-rs</a>.</li>
+</ul>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
