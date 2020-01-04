@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Building New Games - ctoybox-docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Building New Games";
+    var mkdocs_page_input_path = "new-game-help.md";
+    var mkdocs_page_url = "/docs/ctoybox/new-game-help/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ctoybox-docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Python</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../example/">Example</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../toybox/">class Toybox</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../input/">class Input</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../state/">class State</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../simulator/">class Simulator</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Rust</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Building New Games</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#developing-new-games">Developing New Games</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#initial-setup">Initial Setup</a></li>
+        
+            <li><a class="toctree-l4" href="#basic-game-components">Basic Game Components</a></li>
+        
+            <li><a class="toctree-l4" href="#adding-human-play">Adding human play</a></li>
+        
+            <li><a class="toctree-l4" href="#get-starting-images-for-reference-from-ale">Get starting images for reference from ALE</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ctoybox-docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Rust &raquo;</li>
+        
+      
+    
+    <li>Building New Games</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/toybox-rs/toybox-rs/edit/master/docs/new-game-help.md"> Edit on toybox-rs/toybox-rs</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="developing-new-games">Developing New Games<a class="headerlink" href="#developing-new-games" title="Permanent link">&para;</a></h1>
+<h2 id="initial-setup">Initial Setup<a class="headerlink" href="#initial-setup" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Run <code>cargo new tb_&lt;gamename&gt; --lib</code> in the top level of the repository. </li>
+<li>Edit the <code>Cargo.toml</code> in the top level of the repository to add <code>tb_&lt;gamename&gt;</code> to the list of members.</li>
+<li>Create <code>&lt;gamename&gt;.rs</code> in <code>tb_&lt;gamename&gt;/src</code>.</li>
+<li>Create <code>types.rs</code> in <code>tb_&lt;gamename&gt;/src</code>.</li>
+</ol>
+<p><code>tb_&lt;gamename&gt;</code> should now have three files in it: <code>lib.rs</code>, <code>types.rs</code>, and <code>&lt;gamename&gt;.rs</code>. </p>
+<h2 id="basic-game-components">Basic Game Components<a class="headerlink" href="#basic-game-components" title="Permanent link">&para;</a></h2>
+<p><strong><code>lib.rs</code></strong></p>
+<p><code>lib.rs</code> is the top-level API. Only modules declared here will be exposed to other modules. Copy the following to the top of your <code>lib.rs</code>:</p>
+<div class="codehilite"><pre><span></span>extern crate serde;
+extern crate serde_json;
+extern crate toybox_core;
+#[macro_use]
+extern crate serde_derive;
+#[macro_use]
+extern crate lazy_static;
+extern crate ordered_float;
+extern crate rand;
+</pre></div>
+
+<p>Every <code>lib.rs</code> will also have the following declarations:</p>
+<div class="codehilite"><pre><span></span>mod types;
+mod &lt;gamename&gt;;
+</pre></div>
+
+<p>You will export other structures as needed. We recommend that you update this on an as-need basis -- Rust will tell you when it can't find a module, and you should use this to guide when something needs to be exported. </p>
+<p><strong><code>&lt;types&gt;.rs</code></strong></p>
+<p>The types module contains all of the intervenable structs. You should update this file concurrently with <code>&lt;gamename.rs&gt;</code> (we recommend having both open at the same time).</p>
+<p>Nearly every struct will use the macros: <code>#[derive(Debug, Clone, Serialize, Deserialize)]</code>. The following are the necessary structs for every game:</p>
+<p><code>&lt;GameName&gt;</code>: This struct should be structurally the same as the Config object. It is used to instantiate the game and is required for restarting the game. It contains the initial values of fields that are updated during gameplay.</p>
+<p><code>StateCore</code>: This struct contains any per-frame state snapshots. It will have duplicated fields from <code>&lt;GameName&gt;</code> if those fields are updated during gameplay.</p>
+<p><code>State</code>: This struct will have the form:</p>
+<div class="codehilite"><pre><span></span>pub struct State {
+  pub config: `GameName`,
+  pub state: StateCore
+}
+</pre></div>
+
+<p><strong><code>&lt;gamename&gt;.rs</code></strong></p>
+<p><em>Necessary components</em></p>
+<ul>
+<li>
+<p>You must import the following namespaces:
+<div class="codehilite"><pre><span></span>use toybox_core;
+use toybox_core::random;
+use types::*;
+
+use serde_json;
+use rand::seq::SliceRandom;
+</pre></div></p>
+</li>
+<li>
+<p>Default instantiation: you will need to specify what the default instantiation of the game looks like: 
+<div class="codehilite"><pre><span></span>impl Default for &lt;GameName&gt; {
+  fn default() -&gt; Self {
+    // any needed computation
+    &lt;GameName&gt; {
+      // set values here
+    }
+  }
+}
+</pre></div>
+While magic numbers are okay, a default module (e.g., <code>mod default</code>) is better. Including that default module in <code>types.rs</code> and the <code>&lt;GameName&gt;</code> configuration struct is even better.</p>
+</li>
+<li>
+<p><code>impl</code>s with <code>new</code> methods on each of the structs defined in <code>types.rs</code></p>
+</li>
+<li>
+<p><code>impl toybox_core::Simulation for &lt;GameName&gt;</code>. The documentation for this trait is in <code>core/lib.rs</code> at the top level of this repository. You will need to consult the ALE documentation in order to implement <code>legal_action_set</code>. Each Atari game has a predefined legal action set. If you are writing a new game, you will need to map to the ALE set. </p>
+</li>
+<li>The JSON loading and manipulation code can be dropped in with one textual change:</li>
+</ul>
+<div class="codehilite"><pre><span></span>fn new_state_from_json(
+    &amp;self,
+    json_str: &amp;str,
+) -&gt; Result&lt;Box&lt;toybox_core::State&gt;, serde_json::Error&gt; {
+    let state: StateCore = serde_json::from_str(json_str)?;
+    Ok(Box::new(State {
+        config: self.clone(),
+        state,
+    }))
+
+fn from_json(&amp;self, json_str: &amp;str) -&gt; Result&lt;Box&lt;toybox_core::Simulation&gt;, serde_json::Error&gt; {
+    let config: &lt;GameName&gt; = serde_json::from_str(json_str;
+    Ok(Box::new(config))
+}
+
+fn to_json(&amp;self) -&gt; String {
+    serde_json::to_string(self).expect(&quot;&lt;GameName&gt; shoulbe JSON-serializable!&quot;)
+}
+</pre></div>
+
+<ul>
+<li>
+<p><code>impl State</code> : all of the per-transition computation happens in this struct. </p>
+</li>
+<li>
+<p><code>impl toybox_core::State for State</code>: the trait specification lives in <code>core/lib.rs</code> in the top level of this repository. To access the methods you wrote in your <code>State</code> implementation, call <code>self.state</code>. </p>
+</li>
+</ul>
+<p><em>Optional components</em></p>
+<ul>
+<li>
+<p>A <code>screen</code> module. This can be used to generate the static components of the background when you do not expect to be intervening on it.</p>
+</li>
+<li>
+<p><code>impl &lt;GameName&gt;</code>: if you have any calculations that need to be done for configuration, put them here. </p>
+</li>
+</ul>
+<h2 id="adding-human-play">Adding human play<a class="headerlink" href="#adding-human-play" title="Permanent link">&para;</a></h2>
+<h2 id="get-starting-images-for-reference-from-ale">Get starting images for reference from ALE<a class="headerlink" href="#get-starting-images-for-reference-from-ale" title="Permanent link">&para;</a></h2>
+<p><code>./scripts/utils/start_images --help</code> </p>
+              
+            </div>
+          </div>
+<hr />
+
+<p style="text-align:center">
+    <a href="http://toybox.rs">Toybox</a> is developed by Emma Tosch, John Foley, &amp; Kaleigh Clary. <br />
+</p>
+    Questions? <a href="http://github.com/toybox-rs/toybox-rs/issues">File an issue.</a></p>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../simulator/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

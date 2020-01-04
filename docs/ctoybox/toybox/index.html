@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>class Toybox - ctoybox-docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "class Toybox";
+    var mkdocs_page_input_path = "toybox.md";
+    var mkdocs_page_url = "/docs/ctoybox/toybox/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ctoybox-docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Python</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../example/">Example</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">class Toybox</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.__init__">__init__()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.apply_action">apply_action()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.apply_ale_action">apply_ale_action()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.config_to_json">config_to_json()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.game_over">game_over()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.get_height">get_height()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.get_legal_action_set">get_legal_action_set()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.get_level">get_level()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.get_lives">get_lives()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.get_rgb_frame">get_rgb_frame()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.get_score">get_score()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.get_state">get_state()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.get_width">get_width()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.new_game">new_game()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.query_state_json">query_state_json()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.save_frame_image">save_frame_image()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.schema_for_config">schema_for_config()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.schema_for_state">schema_for_state()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.set_seed">set_seed()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.state_to_json">state_to_json()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.to_state_json">to_state_json()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.write_config_json">write_config_json()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Toybox.write_state_json">write_state_json()</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../input/">class Input</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../state/">class State</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../simulator/">class Simulator</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Rust</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../new-game-help/">Building New Games</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ctoybox-docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Python &raquo;</li>
+        
+      
+    
+    <li>class Toybox</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/toybox-rs/toybox-rs/edit/master/docs/toybox.md"> Edit on toybox-rs/toybox-rs</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>This is a stateful representation of Toybox -- since it manages memory, we provide <code>__enter__</code> and <code>__exit__</code> usage for Python's with-blocks:</p>
+<div class="codehilite"><pre><span></span><span class="k">with</span> <span class="n">Toybox</span><span class="p">(</span><span class="s2">&quot;amidar&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">tb</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tb</span><span class="o">.</span><span class="n">get_score</span><span class="p">())</span>
+<span class="c1"># the &#39;tb&#39; variable only lives in the block.</span>
+</pre></div>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Note how we should use this in a with-block; this will clean up pointers and prevent memory leaks.</p>
+</div>
+<h2 id="ctoybox.ffi.Toybox.__init__"><code class="codehilite"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">game_name</span><span class="p">,</span> <span class="n">grayscale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">frameskip</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.__init__" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">game_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">grayscale</span><span class="p">:</span> <span class="nb">bool</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">frameskip</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Construct a new Toybox state/game wrapper. Use this in a with block!</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            game_name: One of &quot;breakout&quot;, &quot;space_invaders&quot;, &quot;amidar&quot;, etc.</span>
+<span class="sd">            grayscale: Toybox can render directly to grayscale, saving time.</span>
+<span class="sd">            frameskip: When an action is submitted, for how many extra frames should it be applied?</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">game_name</span> <span class="o">=</span> <span class="n">game_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">frames_per_action</span> <span class="o">=</span> <span class="n">frameskip</span><span class="o">+</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span> <span class="o">=</span> <span class="n">Simulator</span><span class="p">(</span><span class="n">game_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rstate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="o">.</span><span class="n">new_game</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grayscale</span> <span class="o">=</span> <span class="n">grayscale</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deleted</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">new_game</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Construct a new Toybox state/game wrapper. Use this in a with block!</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>game_name</code></td>
+<td><code>str</code></td>
+<td>One of "breakout", "space_invaders", "amidar", etc.</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>grayscale</code></td>
+<td><code>bool</code></td>
+<td>Toybox can render directly to grayscale, saving time.</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>frameskip</code></td>
+<td><code>int</code></td>
+<td>When an action is submitted, for how many extra frames should it be applied?</td>
+<td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.Toybox.apply_action"><code class="codehilite"><span class="n">apply_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action_input_obj</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.apply_action" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">apply_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action_input_obj</span><span class="p">:</span> <span class="n">Input</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Takes an [ctoybox.Input][] action and applies it - unlike the ALE actions (which allow some permutations) this allows for fine-grained button pressing.</span>
+
+<span class="sd">        This applies the action *k* times, where *k* based on the frameskip passed to the Toybox constructor.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            action_input_obj: An instance of the [ctoybox.Input][] class.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># implement frameskip(k) by sending the action (k+1) times every time we have an action.</span>
+        <span class="n">js</span> <span class="o">=</span> <span class="n">json_str</span><span class="p">(</span><span class="n">action_input_obj</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span>
+        <span class="n">js_cstr</span> <span class="o">=</span> <span class="n">ffi</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;char []&quot;</span><span class="p">,</span> <span class="n">js</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frames_per_action</span><span class="p">):</span>
+            <span class="n">lib</span><span class="o">.</span><span class="n">state_apply_action</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rstate</span><span class="o">.</span><span class="n">get_state</span><span class="p">(),</span> <span class="n">js_cstr</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Takes an [ctoybox.Input][] action and applies it - unlike the ALE actions (which allow some permutations) this allows for fine-grained button pressing.</p>
+<p>This applies the action <em>k</em> times, where <em>k</em> based on the frameskip passed to the Toybox constructor.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>action_input_obj</code></td>
+<td><code>Input</code></td>
+<td>An instance of the [ctoybox.Input][] class.</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.Toybox.apply_ale_action"><code class="codehilite"><span class="n">apply_ale_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action_int</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.apply_ale_action" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">apply_ale_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action_int</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Takes an integer corresponding to an action, as specified in ALE.</span>
+
+<span class="sd">        This applies the action *k* times, where *k* based on the frameskip passed to the Toybox constructor.</span>
+
+<span class="sd">        ```python</span>
+<span class="sd">        ALE_INPUT_MAPPING = {</span>
+<span class="sd">            0 : &quot;NOOP&quot;,</span>
+<span class="sd">            1 : &quot;FIRE&quot;,</span>
+<span class="sd">            2 : &quot;UP&quot;,</span>
+<span class="sd">            3 : &quot;RIGHT&quot;,</span>
+<span class="sd">            4 : &quot;LEFT&quot;,</span>
+<span class="sd">            5 : &quot;DOWN&quot;,</span>
+<span class="sd">            6 : &quot;UPRIGHT&quot;,</span>
+<span class="sd">            7 : &quot;UPLEFT&quot;,</span>
+<span class="sd">            8 : &quot;DOWNRIGHT&quot;,</span>
+<span class="sd">            9 : &quot;DOWNLEFT&quot;,</span>
+<span class="sd">            10 : &quot;UPFIRE&quot;,</span>
+<span class="sd">            11 : &quot;RIGHTFIRE&quot;,</span>
+<span class="sd">            12 : &quot;LEFTFIRE&quot;,</span>
+<span class="sd">            13 : &quot;DOWNFIRE&quot;,</span>
+<span class="sd">            14 : &quot;UPRIGHTFIRE&quot;,</span>
+<span class="sd">            15 : &quot;UPLEFTFIRE&quot;,</span>
+<span class="sd">            16 : &quot;DOWNRIGHTFIRE&quot;,</span>
+<span class="sd">            17 : &quot;DOWNLEFTFIRE&quot;</span>
+<span class="sd">        }</span>
+<span class="sd">        ```</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            action_int: A number from 0 to 17 inclusive.</span>
+<span class="sd">        &quot;&quot;&quot;</span>      
+        <span class="c1"># implement frameskip(k) by sending the action (k+1) times every time we have an action.</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frames_per_action</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">lib</span><span class="o">.</span><span class="n">state_apply_ale_action</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rstate</span><span class="o">.</span><span class="n">get_state</span><span class="p">(),</span> <span class="n">action_int</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Expected to apply action, but failed: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">action_int</span><span class="p">))</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Takes an integer corresponding to an action, as specified in ALE.</p>
+<p>This applies the action <em>k</em> times, where <em>k</em> based on the frameskip passed to the Toybox constructor.</p>
+<div class="codehilite"><pre><span></span><span class="n">ALE_INPUT_MAPPING</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">0</span> <span class="p">:</span> <span class="s2">&quot;NOOP&quot;</span><span class="p">,</span>
+    <span class="mi">1</span> <span class="p">:</span> <span class="s2">&quot;FIRE&quot;</span><span class="p">,</span>
+    <span class="mi">2</span> <span class="p">:</span> <span class="s2">&quot;UP&quot;</span><span class="p">,</span>
+    <span class="mi">3</span> <span class="p">:</span> <span class="s2">&quot;RIGHT&quot;</span><span class="p">,</span>
+    <span class="mi">4</span> <span class="p">:</span> <span class="s2">&quot;LEFT&quot;</span><span class="p">,</span>
+    <span class="mi">5</span> <span class="p">:</span> <span class="s2">&quot;DOWN&quot;</span><span class="p">,</span>
+    <span class="mi">6</span> <span class="p">:</span> <span class="s2">&quot;UPRIGHT&quot;</span><span class="p">,</span>
+    <span class="mi">7</span> <span class="p">:</span> <span class="s2">&quot;UPLEFT&quot;</span><span class="p">,</span>
+    <span class="mi">8</span> <span class="p">:</span> <span class="s2">&quot;DOWNRIGHT&quot;</span><span class="p">,</span>
+    <span class="mi">9</span> <span class="p">:</span> <span class="s2">&quot;DOWNLEFT&quot;</span><span class="p">,</span>
+    <span class="mi">10</span> <span class="p">:</span> <span class="s2">&quot;UPFIRE&quot;</span><span class="p">,</span>
+    <span class="mi">11</span> <span class="p">:</span> <span class="s2">&quot;RIGHTFIRE&quot;</span><span class="p">,</span>
+    <span class="mi">12</span> <span class="p">:</span> <span class="s2">&quot;LEFTFIRE&quot;</span><span class="p">,</span>
+    <span class="mi">13</span> <span class="p">:</span> <span class="s2">&quot;DOWNFIRE&quot;</span><span class="p">,</span>
+    <span class="mi">14</span> <span class="p">:</span> <span class="s2">&quot;UPRIGHTFIRE&quot;</span><span class="p">,</span>
+    <span class="mi">15</span> <span class="p">:</span> <span class="s2">&quot;UPLEFTFIRE&quot;</span><span class="p">,</span>
+    <span class="mi">16</span> <span class="p">:</span> <span class="s2">&quot;DOWNRIGHTFIRE&quot;</span><span class="p">,</span>
+    <span class="mi">17</span> <span class="p">:</span> <span class="s2">&quot;DOWNLEFTFIRE&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>action_int</code></td>
+<td><code>int</code></td>
+<td>A number from 0 to 17 inclusive.</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.Toybox.config_to_json"><code class="codehilite"><span class="n">config_to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.config_to_json" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>439
+440
+441</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">config_to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Get the state&#39;s JSON representation as a python dict.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the state's JSON representation as a python dict.</p>
+</div>
+<h2 id="ctoybox.ffi.Toybox.game_over"><code class="codehilite"><span class="n">game_over</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.game_over" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>418
+419
+420
+421
+422
+423
+424
+425</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">game_over</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check for game over condition.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            ``True`` if the player has run out of lives in the current state.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rstate</span><span class="o">.</span><span class="n">game_over</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Check for game over condition.</p>
+<p><strong>Returns</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool</code></td>
+<td><code>True</code> if the player has run out of lives in the current state.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.Toybox.get_height"><code class="codehilite"><span class="n">get_height</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.get_height" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>298
+299
+300</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">get_height</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Get the height of the rendered game in pixels.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="o">.</span><span class="n">get_frame_height</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the height of the rendered game in pixels.</p>
+</div>
+<h2 id="ctoybox.ffi.Toybox.get_legal_action_set"><code class="codehilite"><span class="n">get_legal_action_set</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.get_legal_action_set" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>306
+307
+308
+309
+310
+311
+312
+313
+314</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">get_legal_action_set</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Get the set of actions consumed by this game: they are ALE numbered.&quot;&quot;&quot;</span>
+        <span class="n">sim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="o">.</span><span class="n">get_simulator</span><span class="p">()</span>
+        <span class="n">txt</span> <span class="o">=</span> <span class="n">rust_str</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">simulator_actions</span><span class="p">(</span><span class="n">sim</span><span class="p">))</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the set of actions consumed by this game: they are ALE numbered.</p>
+</div>
+<h2 id="ctoybox.ffi.Toybox.get_level"><code class="codehilite"><span class="n">get_level</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.get_level" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>410
+411
+412
+413
+414
+415
+416</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">get_level</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Access the number of levels.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The number of levels completed in the current state.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rstate</span><span class="o">.</span><span class="n">level</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Access the number of levels.</p>
+<p><strong>Returns</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td>The number of levels completed in the current state.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.Toybox.get_lives"><code class="codehilite"><span class="n">get_lives</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.get_lives" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>403
+404
+405
+406
+407
+408</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">get_lives</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Access the number of lives.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The number of lives remaining in the current state.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rstate</span><span class="o">.</span><span class="n">lives</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Access the number of lives.</p>
+<p><strong>Returns</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td>The number of lives remaining in the current state.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.Toybox.get_rgb_frame"><code class="codehilite"><span class="n">get_rgb_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.get_rgb_frame" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>392
+393
+394</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">get_rgb_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Get the RGB frame as a numpy array.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rstate</span><span class="o">.</span><span class="n">render_frame_rgb</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the RGB frame as a numpy array.</p>
+</div>
+<h2 id="ctoybox.ffi.Toybox.get_score"><code class="codehilite"><span class="n">get_score</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.get_score" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>396
+397
+398
+399
+400
+401</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">get_score</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Access the current score.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The number of points earned in the current state.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rstate</span><span class="o">.</span><span class="n">score</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Access the current score.</p>
+<p><strong>Returns</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td>The number of points earned in the current state.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.Toybox.get_state"><code class="codehilite"><span class="n">get_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.get_state" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>366
+367
+368</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">get_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;This state here actually refers to the graphical, RGBA or grayscale representation of the current state.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rstate</span><span class="o">.</span><span class="n">render_frame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grayscale</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>This state here actually refers to the graphical, RGBA or grayscale representation of the current state.</p>
+</div>
+<h2 id="ctoybox.ffi.Toybox.get_width"><code class="codehilite"><span class="n">get_width</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.get_width" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>302
+303
+304</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">get_width</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Get the width of the rendered game in pixels.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="o">.</span><span class="n">get_frame_width</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the width of the rendered game in pixels.</p>
+</div>
+<h2 id="ctoybox.ffi.Toybox.new_game"><code class="codehilite"><span class="n">new_game</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.new_game" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>287
+288
+289
+290
+291
+292
+293
+294
+295
+296</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">new_game</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Modify this Toybox wrapper to have a new_game state.</span>
+
+<span class="sd">        Important:</span>
+<span class="sd">            This discards the old state!</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">old_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rstate</span>
+        <span class="k">del</span> <span class="n">old_state</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rstate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="o">.</span><span class="n">new_game</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Modify this Toybox wrapper to have a new_game state.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This discards the old state!</p>
+</div>
+</div>
+<h2 id="ctoybox.ffi.Toybox.query_state_json"><code class="codehilite"><span class="n">query_state_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="s1">&#39;null&#39;</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.query_state_json" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>466
+467
+468
+469
+470
+471
+472
+473</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">query_state_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;null&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span> 
+        <span class="sd">&quot;&quot;&quot;Submit a query to the game&#39;s query system -- faster than accessing the whole JSON for quick introspection.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            query: the query string to send to the game.</span>
+<span class="sd">            args: a JSON argument to attach to the query string.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rstate</span><span class="o">.</span><span class="n">query_json</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Submit a query to the game's query system -- faster than accessing the whole JSON for quick introspection.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>query</code></td>
+<td><code>str</code></td>
+<td>the query string to send to the game.</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>args</code></td>
+<td><code>Union[Dict[str, Any], str]</code></td>
+<td>a JSON argument to attach to the query string.</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.Toybox.save_frame_image"><code class="codehilite"><span class="n">save_frame_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">grayscale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.save_frame_image" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">save_frame_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">grayscale</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Save the current frame image to a PNG file.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            path: the filename to save to.</span>
+<span class="sd">            grayscale: whether images should be saved in color or black &amp; white.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">grayscale</span><span class="p">:</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rstate</span><span class="o">.</span><span class="n">render_frame_grayscale</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="p">),</span> <span class="s1">&#39;L&#39;</span><span class="p">)</span> 
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rstate</span><span class="o">.</span><span class="n">render_frame_color</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="p">),</span> <span class="s1">&#39;RGBA&#39;</span><span class="p">)</span>
+        <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Save the current frame image to a PNG file.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td><code>str</code></td>
+<td>the filename to save to.</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>grayscale</code></td>
+<td><code>bool</code></td>
+<td>whether images should be saved in color or black &amp; white.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.Toybox.schema_for_config"><code class="codehilite"><span class="n">schema_for_config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.schema_for_config" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>493
+494
+495</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">schema_for_config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Get the JSON Schema for the Config object.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="o">.</span><span class="n">schema_for_config</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the JSON Schema for the Config object.</p>
+</div>
+<h2 id="ctoybox.ffi.Toybox.schema_for_state"><code class="codehilite"><span class="n">schema_for_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.schema_for_state" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>489
+490
+491</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">schema_for_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span><span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Get the JSON Schema for the frame State object.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="o">.</span><span class="n">schema_for_state</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the JSON Schema for the frame State object.</p>
+</div>
+<h2 id="ctoybox.ffi.Toybox.set_seed"><code class="codehilite"><span class="n">set_seed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.set_seed" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>370
+371
+372
+373
+374
+375
+376</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">set_seed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Control the random number generator of the config -- only affects a new_game.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            seed: a parameter to reset the built-in random number generator.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="o">.</span><span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Control the random number generator of the config -- only affects a new_game.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>seed</code></td>
+<td><code>int</code></td>
+<td>a parameter to reset the built-in random number generator.</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.Toybox.state_to_json"><code class="codehilite"><span class="n">state_to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.state_to_json" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>427
+428
+429</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">state_to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Get the state&#39;s JSON representation as a python object.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rstate</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the state's JSON representation as a python object.</p>
+</div>
+<h2 id="ctoybox.ffi.Toybox.to_state_json"><code class="codehilite"><span class="n">to_state_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.to_state_json" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>431
+432
+433
+434
+435
+436
+437</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">to_state_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Get the state&#39;s JSON representation as a python dict.</span>
+
+<span class="sd">        Important:</span>
+<span class="sd">            This method is deprecated; please use ``state_to_json`` instead!</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_to_json</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the state's JSON representation as a python dict.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This method is deprecated; please use <code>state_to_json</code> instead!</p>
+</div>
+</div>
+<h2 id="ctoybox.ffi.Toybox.write_config_json"><code class="codehilite"><span class="n">write_config_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_js</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.write_config_json" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">write_config_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_js</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;Overwrite the config&#39;s JSON representation from a python dict. </span>
+
+<span class="sd">        It is likely that some changes will be seen until you call new_game()</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            config_js: the python representation of the config JSON</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># from_json replaces simulator!</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">config_js</span><span class="p">)</span>
+        <span class="c1"># new_game replaces state!</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">new_game</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Overwrite the config's JSON representation from a python dict. </p>
+<p>It is likely that some changes will be seen until you call new_game()</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config_js</code></td>
+<td><code>Dict[str, Any]</code></td>
+<td>the python representation of the config JSON</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.Toybox.write_state_json"><code class="codehilite"><span class="n">write_state_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">js</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Toybox.write_state_json" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>443
+444
+445
+446
+447
+448
+449
+450
+451</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">write_state_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">js</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;Overwrite the state&#39;s JSON representation from a python dict.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            js: the python representation of the JSON state.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">old_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rstate</span>
+        <span class="k">del</span> <span class="n">old_state</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rstate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rsimulator</span><span class="o">.</span><span class="n">state_from_json</span><span class="p">(</span><span class="n">js</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Overwrite the state's JSON representation from a python dict.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>js</code></td>
+<td><code>Dict[str, Any]</code></td>
+<td>the python representation of the JSON state.</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+              
+            </div>
+          </div>
+<hr />
+
+<p style="text-align:center">
+    <a href="http://toybox.rs">Toybox</a> is developed by Emma Tosch, John Foley, &amp; Kaleigh Clary. <br />
+</p>
+    Questions? <a href="http://github.com/toybox-rs/toybox-rs/issues">File an issue.</a></p>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../example/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../input/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

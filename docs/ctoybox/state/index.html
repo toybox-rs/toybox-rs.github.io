@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>class State - ctoybox-docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "class State";
+    var mkdocs_page_input_path = "state.md";
+    var mkdocs_page_url = "/docs/ctoybox/state/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ctoybox-docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Python</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../example/">Example</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../toybox/">class Toybox</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../input/">class Input</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">class State</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#ctoybox.ffi.State.__init__">__init__()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.State.game_over">game_over()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.State.get_state">get_state()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.State.level">level()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.State.lives">lives()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.State.query_json">query_json()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.State.render_frame">render_frame()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.State.render_frame_color">render_frame_color()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.State.render_frame_grayscale">render_frame_grayscale()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.State.render_frame_rgb">render_frame_rgb()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.State.score">score()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.State.to_json">to_json()</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../simulator/">class Simulator</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Rust</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../new-game-help/">Building New Games</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ctoybox-docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Python &raquo;</li>
+        
+      
+    
+    <li>class State</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/toybox-rs/toybox-rs/edit/master/docs/state.md"> Edit on toybox-rs/toybox-rs</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>The State object represents everything the game needs to know about any single simulated frame.</p>
+<p>You can rewind in time by storing and restoring these state representations.</p>
+<ul>
+<li>Access the json: <code>to_json</code></li>
+<li>Access the image: <code>render_frame</code></li>
+</ul>
+<h2 id="ctoybox.ffi.State.__init__"><code class="codehilite"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sim</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.State.__init__" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sim</span><span class="p">:</span> <span class="n">Simulator</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Construct a new State instance wrapper.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            sim: The simulator responsible for this state.</span>
+<span class="sd">            state: Optional pointer to a state to use (otherwise it will create one). </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__state</span> <span class="o">=</span> <span class="n">state</span> <span class="ow">or</span> <span class="n">lib</span><span class="o">.</span><span class="n">state_alloc</span><span class="p">(</span><span class="n">sim</span><span class="o">.</span><span class="n">get_simulator</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">game_name</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">game_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deleted</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Construct a new State instance wrapper.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sim</code></td>
+<td><code>Simulator</code></td>
+<td>The simulator responsible for this state.</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td><code>_empty</code></td>
+<td>Optional pointer to a state to use (otherwise it will create one).</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.State.game_over"><code class="codehilite"><span class="n">game_over</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.State.game_over" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>168
+169
+170
+171
+172
+173</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">game_over</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Determine whether the game has ended; i.e., the player has run out of lives.</span>
+
+<span class="sd">        &gt;&gt;&gt; assert self.lives() &lt; 0 == self.game_over()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lives</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">0</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Determine whether the game has ended; i.e., the player has run out of lives.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>assert self.lives() &lt; 0 == self.game_over()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</div>
+<h2 id="ctoybox.ffi.State.get_state"><code class="codehilite"><span class="n">get_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.State.get_state" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>151
+152
+153
+154</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">get_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the raw state pointer.&quot;&quot;&quot;</span>
+        <span class="k">assert</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__state</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__state</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the raw state pointer.</p>
+</div>
+<h2 id="ctoybox.ffi.State.level"><code class="codehilite"><span class="n">level</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.State.level" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>160
+161
+162</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">level</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;How many levels have been completed in the current state?&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">lib</span><span class="o">.</span><span class="n">state_level</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__state</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>How many levels have been completed in the current state?</p>
+</div>
+<h2 id="ctoybox.ffi.State.lives"><code class="codehilite"><span class="n">lives</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.State.lives" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>156
+157
+158</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">lives</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;How many lives are remaining in the current state?&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">lib</span><span class="o">.</span><span class="n">state_lives</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__state</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>How many lives are remaining in the current state?</p>
+</div>
+<h2 id="ctoybox.ffi.State.query_json"><code class="codehilite"><span class="n">query_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="s1">&#39;null&#39;</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.State.query_json" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">query_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;null&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Ask a question of the Rust state; queries are currently implemented manually.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            query: the message to send to the rust state.</span>
+<span class="sd">            args: the arguments to send to the rust state, defaults to &quot;null&quot;.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            response: A JSON response loaded to python objects.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: if anything goes wrong with the query</span>
+
+<span class="sd">        ```python</span>
+<span class="sd">        with Toybox(&quot;breakout&quot;) as tb:</span>
+<span class="sd">          tb.query_json(&quot;bricks_remaining&quot;)</span>
+<span class="sd">        ```</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">txt</span> <span class="o">=</span> <span class="n">rust_str</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">state_query_json</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__state</span><span class="p">,</span> <span class="n">json_str</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">json_str</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)))</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">txt</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Ask a question of the Rust state; queries are currently implemented manually.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>query</code></td>
+<td><code>str</code></td>
+<td>the message to send to the rust state.</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>args</code></td>
+<td><code>Union[Dict[str, Any], str]</code></td>
+<td>the arguments to send to the rust state, defaults to "null".</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Dict[str, Any]</code></td>
+<td>response: A JSON response loaded to python objects.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ValueError</code></td>
+<td>if anything goes wrong with the query</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><span class="k">with</span> <span class="n">Toybox</span><span class="p">(</span><span class="s2">&quot;breakout&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">tb</span><span class="p">:</span>
+  <span class="n">tb</span><span class="o">.</span><span class="n">query_json</span><span class="p">(</span><span class="s2">&quot;bricks_remaining&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+<h2 id="ctoybox.ffi.State.render_frame"><code class="codehilite"><span class="n">render_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sim</span><span class="p">,</span> <span class="n">grayscale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.State.render_frame" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">render_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sim</span><span class="p">:</span> <span class="n">Simulator</span><span class="p">,</span> <span class="n">grayscale</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Generate an image from the current frame state object.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            sim: the simulator to use; this tells us the width/height necessary.</span>
+<span class="sd">            grayscale: True if we want to render in grayscale rather than in color (RGBA).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">grayscale</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">render_frame_grayscale</span><span class="p">(</span><span class="n">sim</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">render_frame_color</span><span class="p">(</span><span class="n">sim</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Generate an image from the current frame state object.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sim</code></td>
+<td><code>Simulator</code></td>
+<td>the simulator to use; this tells us the width/height necessary.</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>grayscale</code></td>
+<td><code>bool</code></td>
+<td>True if we want to render in grayscale rather than in color (RGBA).</td>
+<td><code>True</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.State.render_frame_color"><code class="codehilite"><span class="n">render_frame_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sim</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.State.render_frame_color" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">render_frame_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sim</span><span class="p">:</span> <span class="n">Simulator</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Generate an RGBA image from the current frame state object.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            sim: the simulator to use; this tells us the width/height necessary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">get_frame_height</span><span class="p">()</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">get_frame_width</span><span class="p">()</span>
+        <span class="n">rgba</span> <span class="o">=</span> <span class="mi">4</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">w</span>  <span class="o">*</span> <span class="n">rgba</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;uint8&#39;</span><span class="p">)</span>
+        <span class="n">frame_ptr</span> <span class="o">=</span> <span class="n">ffi</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s2">&quot;uint8_t *&quot;</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">lib</span><span class="o">.</span><span class="n">render_current_frame</span><span class="p">(</span><span class="n">frame_ptr</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">sim</span><span class="o">.</span><span class="n">get_simulator</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">__state</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">rgba</span><span class="p">))</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Generate an RGBA image from the current frame state object.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sim</code></td>
+<td><code>Simulator</code></td>
+<td>the simulator to use; this tells us the width/height necessary.</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.State.render_frame_grayscale"><code class="codehilite"><span class="n">render_frame_grayscale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sim</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.State.render_frame_grayscale" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">render_frame_grayscale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sim</span><span class="p">:</span> <span class="n">Simulator</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Generate a grayscale image from the current frame state object.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            sim: the simulator to use; this tells us the width/height necessary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">get_frame_height</span><span class="p">()</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">sim</span><span class="o">.</span><span class="n">get_frame_width</span><span class="p">()</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">w</span> 
+        <span class="n">frame</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;uint8&#39;</span><span class="p">)</span>
+        <span class="n">frame_ptr</span> <span class="o">=</span> <span class="n">ffi</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s2">&quot;uint8_t *&quot;</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">lib</span><span class="o">.</span><span class="n">render_current_frame</span><span class="p">(</span><span class="n">frame_ptr</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">sim</span><span class="o">.</span><span class="n">get_simulator</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">__state</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Generate a grayscale image from the current frame state object.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sim</code></td>
+<td><code>Simulator</code></td>
+<td>the simulator to use; this tells us the width/height necessary.</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.State.render_frame_rgb"><code class="codehilite"><span class="n">render_frame_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sim</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.State.render_frame_rgb" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>228
+229
+230
+231
+232
+233
+234
+235</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">render_frame_rgb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sim</span><span class="p">:</span> <span class="n">Simulator</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Generate an RGB image from the current frame state object.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            sim: the simulator to use; this tells us the width/height necessary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">rgba_frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">render_frame_color</span><span class="p">(</span><span class="n">sim</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rgba_frame</span><span class="p">[:,:,:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Generate an RGB image from the current frame state object.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sim</code></td>
+<td><code>Simulator</code></td>
+<td>the simulator to use; this tells us the width/height necessary.</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.State.score"><code class="codehilite"><span class="n">score</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.State.score" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>164
+165
+166</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">score</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;How many points have been earned in the current state?&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">lib</span><span class="o">.</span><span class="n">state_score</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__state</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>How many points have been earned in the current state?</p>
+</div>
+<h2 id="ctoybox.ffi.State.to_json"><code class="codehilite"><span class="n">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.State.to_json" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>251
+252
+253
+254</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Get a JSON representation of the state.&quot;&quot;&quot;</span>
+        <span class="n">json_str</span> <span class="o">=</span> <span class="n">rust_str</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">state_to_json</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__state</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">json_str</span><span class="p">))</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get a JSON representation of the state.</p>
+</div>
+              
+            </div>
+          </div>
+<hr />
+
+<p style="text-align:center">
+    <a href="http://toybox.rs">Toybox</a> is developed by Emma Tosch, John Foley, &amp; Kaleigh Clary. <br />
+</p>
+    Questions? <a href="http://github.com/toybox-rs/toybox-rs/issues">File an issue.</a></p>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../input/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../simulator/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

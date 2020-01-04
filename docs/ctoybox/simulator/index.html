@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>class Simulator - ctoybox-docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "class Simulator";
+    var mkdocs_page_input_path = "simulator.md";
+    var mkdocs_page_url = "/docs/ctoybox/simulator/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ctoybox-docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Python</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../example/">Example</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../toybox/">class Toybox</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../input/">class Input</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../state/">class State</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">class Simulator</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Simulator.__init__">__init__()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Simulator.from_json">from_json()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Simulator.get_frame_height">get_frame_height()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Simulator.get_frame_width">get_frame_width()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Simulator.get_simulator">get_simulator()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Simulator.new_game">new_game()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Simulator.schema_for_config">schema_for_config()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Simulator.schema_for_state">schema_for_state()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Simulator.set_seed">set_seed()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Simulator.state_from_json">state_from_json()</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ctoybox.ffi.Simulator.to_json">to_json()</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Rust</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../new-game-help/">Building New Games</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ctoybox-docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Python &raquo;</li>
+        
+      
+    
+    <li>class Simulator</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/toybox-rs/toybox-rs/edit/master/docs/simulator.md"> Edit on toybox-rs/toybox-rs</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>The Simulator is an instance of a game configuration.
+You can call new_game on it to begin.</p>
+<h2 id="ctoybox.ffi.Simulator.__init__"><code class="codehilite"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">game_name</span><span class="p">,</span> <span class="n">sim</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Simulator.__init__" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">game_name</span><span class="p">,</span> <span class="n">sim</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Construct a new instance.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            game_name: one of &quot;breakout&quot;, &quot;amidar&quot;, etc.</span>
+<span class="sd">            sim: optionally a Rust pointer to an existing simulator.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">sim</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">sim</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">simulator_alloc</span><span class="p">(</span><span class="n">game_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+        <span class="c1"># sim should be a pointer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">game_name</span> <span class="o">=</span> <span class="n">game_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__sim</span> <span class="o">=</span> <span class="n">sim</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">deleted</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Construct a new instance.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>game_name</code></td>
+<td><code>_empty</code></td>
+<td>one of "breakout", "amidar", etc.</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>sim</code></td>
+<td><code>_empty</code></td>
+<td>optionally a Rust pointer to an existing simulator.</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.Simulator.from_json"><code class="codehilite"><span class="n">from_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_js</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Simulator.from_json" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>103
+104
+105
+106
+107</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_js</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="nb">str</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;Mutably update this simulator/config with the replacement json.&quot;&quot;&quot;</span>
+        <span class="n">old_sim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__sim</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__sim</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">simulator_from_json</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_simulator</span><span class="p">(),</span> <span class="n">json_str</span><span class="p">(</span><span class="n">config_js</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+        <span class="k">del</span> <span class="n">old_sim</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Mutably update this simulator/config with the replacement json.</p>
+</div>
+<h2 id="ctoybox.ffi.Simulator.get_frame_height"><code class="codehilite"><span class="n">get_frame_height</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Simulator.get_frame_height" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>77
+78
+79</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">get_frame_height</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Get the height in pixels of the frames this game renders.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">lib</span><span class="o">.</span><span class="n">simulator_frame_height</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__sim</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the height in pixels of the frames this game renders.</p>
+</div>
+<h2 id="ctoybox.ffi.Simulator.get_frame_width"><code class="codehilite"><span class="n">get_frame_width</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Simulator.get_frame_width" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>73
+74
+75</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">get_frame_width</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Get the width in pixels of the frames this game renders.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">lib</span><span class="o">.</span><span class="n">simulator_frame_width</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__sim</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the width in pixels of the frames this game renders.</p>
+</div>
+<h2 id="ctoybox.ffi.Simulator.get_simulator"><code class="codehilite"><span class="n">get_simulator</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Simulator.get_simulator" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>81
+82
+83</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">get_simulator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get access to the raw simulator pointer.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__sim</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get access to the raw simulator pointer.</p>
+</div>
+<h2 id="ctoybox.ffi.Simulator.new_game"><code class="codehilite"><span class="n">new_game</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Simulator.new_game" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>85
+86
+87</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">new_game</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;State&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Start a new game.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">State</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Start a new game.</p>
+</div>
+<h2 id="ctoybox.ffi.Simulator.schema_for_config"><code class="codehilite"><span class="n">schema_for_config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Simulator.schema_for_config" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>113
+114
+115</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">schema_for_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the JSON Schema for any config for this game.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">rust_str</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">simulator_schema_for_config</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__sim</span><span class="p">)))</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the JSON Schema for any config for this game.</p>
+</div>
+<h2 id="ctoybox.ffi.Simulator.schema_for_state"><code class="codehilite"><span class="n">schema_for_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Simulator.schema_for_state" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>109
+110
+111</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">schema_for_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Get the JSON Schema for any state for this game.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">rust_str</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">simulator_schema_for_state</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__sim</span><span class="p">)))</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the JSON Schema for any state for this game.</p>
+</div>
+<h2 id="ctoybox.ffi.Simulator.set_seed"><code class="codehilite"><span class="n">set_seed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Simulator.set_seed" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>65
+66
+67
+68
+69
+70
+71</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">set_seed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Configure the random number generator that spawns new game states.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            seed: a parameter to reset the built-in random number generator.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">lib</span><span class="o">.</span><span class="n">simulator_seed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__sim</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Configure the random number generator that spawns new game states.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>seed</code></td>
+<td><code>int</code></td>
+<td>a parameter to reset the built-in random number generator.</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.Simulator.state_from_json"><code class="codehilite"><span class="n">state_from_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">js</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Simulator.state_from_json" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>89
+90
+91
+92
+93
+94
+95
+96</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">state_from_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">js</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s1">&#39;State&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Generate a State from the state json and this configuration.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            js: a JSON object or string containing a serialized state.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">state_from_json</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_simulator</span><span class="p">(),</span> <span class="n">json_str</span><span class="p">(</span><span class="n">js</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">State</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Generate a State from the state json and this configuration.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>js</code></td>
+<td><code>Union[Dict[str, Any], str]</code></td>
+<td>a JSON object or string containing a serialized state.</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="ctoybox.ffi.Simulator.to_json"><code class="codehilite"><span class="n">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code><a class="headerlink" href="#ctoybox.ffi.Simulator.to_json" title="Permanent link">&para;</a></h2>
+<div class="autodoc">
+<details class="note"><summary>Show source code in ctoybox/ffi.py</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 98
+ 99
+100
+101</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Get the configuration of this simulator/config as JSON&quot;&quot;&quot;</span>
+        <span class="n">json_str</span> <span class="o">=</span> <span class="n">rust_str</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">simulator_to_json</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_simulator</span><span class="p">()))</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">json_str</span><span class="p">))</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<p>Get the configuration of this simulator/config as JSON</p>
+</div>
+              
+            </div>
+          </div>
+<hr />
+
+<p style="text-align:center">
+    <a href="http://toybox.rs">Toybox</a> is developed by Emma Tosch, John Foley, &amp; Kaleigh Clary. <br />
+</p>
+    Questions? <a href="http://github.com/toybox-rs/toybox-rs/issues">File an issue.</a></p>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../state/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../new-game-help/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
